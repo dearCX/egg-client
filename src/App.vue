@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
+    <van-tabbar route>
+      <van-tabbar-item replace to="/" icon="home-o">
+        首页
+      </van-tabbar-item>
+      <van-tabbar-item replace to="/add" icon="plus">
+        add
+      </van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
+<script>
+import { Button, Tabbar, TabbarItem } from 'vant'
+export default {
+  name: 'App',
+  components: {
+    [Button.name]: Button,
+    [Tabbar.name]: Tabbar,
+    [TabbarItem.name]: TabbarItem
+  }
+}
+</script>
 
 <style lang="less">
 #app {
